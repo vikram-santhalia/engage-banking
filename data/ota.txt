@@ -1,0 +1,77 @@
+$scope.statementOTAData = [
+      {"name":"Customer Id"},
+      {"name":"Customer Ph No"},
+      {"name":"Customer Email"},
+      {"name":"Customer Gender"},
+      {"name":"Customer City"},
+      {"name":"Customer FirstName"},
+      {"name":"Customer LastName"},
+      {"name":"Customer Birthday"},
+      {"name":"Signedup Date"},
+      {"name":"Last Purchase"},
+      {"name":"Last Visit to Website"},
+      {"name":"Country"},
+      {"name":"Total Amount Spent"},
+      {"name":"Total Number of Tickets Booked"},
+      {"name":"Total International Tickets Booked"},
+      {"name":"Total Domestic Tickets Booked"},
+      {"name":"Total Hotels Booked"},
+      {"name":"Amount Spent on Intl Tickets"},
+      {"name":"Amount Spent on Domestic Tickets"},
+      {"name":"Amoutn Spent on Hotels"},
+      {"name":"Amount Spent on Packages"},
+      {"name":"Downloaded App"}
+];
+
+
+$scope.groups = [
+    {
+      title: 'Frequent International Flyers',
+      open: true,
+      content: 'Users who travel to international destination on regular basis'
+    },
+    {
+      title: 'Users who only book hotels but not flights on the site',
+      open: false,
+      content: 'Set of users who travel but do not book flights from the site'
+    },
+    {
+      title: 'Last booked 3 months back',
+      open: false,
+      content: 'Registered users but havent visited the site for 3 months'
+    },
+    {
+      title: 'Not App user yet',
+      open: false,
+      content: 'Registered users who have not yet downloaded the Mobile App'
+    },
+    {
+      title: 'Loyal Customers',
+      open: false,
+      content: 'Those who book domestic, international, hotels, packages regularly from the site'
+    }
+  ];
+
+
+  $scope.savedSegments = [
+      {
+        name: "Inquire about the packages",
+        desc: "",
+        reach: "5388453"
+      },
+      {
+        name: "Booked only once",
+        desc: "",
+        reach: "2178021"
+      },
+      {
+        name: "Signed up before 01/01/2012",
+        desc: "",
+        reach: "3300913"
+      },
+      {
+        name: "Birthday in next 7 days",
+        desc: "",
+        reach: "1338100"
+      }
+    ];

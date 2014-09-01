@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-3 campaign_heading">
+    <h3>Campaigns</h3>
+  </div>
+  <div class="col-md-9">
+    <div class="dashboard_heading">
+      <h3 
+        ng-repeat="group in groups"
+        ng-show="group.open === true"
+        >{{group.title}}
+      </h3>
+    </div>
+  </div>
+</div>  
+
+<div class="row">
+  <div class="col-md-3 mycampaigns">
+    <accordion close-others="oneAtATime">
+    <accordion-group 
+      heading="{{group.title}}" 
+      ng-repeat="group in groups" 
+      is-open="group.open" 
+      ng-class="{open: group.open === true}">
+      {{group.content}}
+    </accordion-group>
+  </accordion>
+  </div>
+  <div class="col-md-9">
+    <div class="row mytables">
+      <div class="col-md-4"  ng-repeat="table in telcoTables">
+        <table 
+          class="table mytable {{table.className}}" 
+          id="{{table.id}}"
+          ng-class="{active: table.active === true}"
+          ng-click="showTable($index)"
+        >
+          <tr>
+            <th 
+              class="myheading {{table.headingClass}}" 
+              colspan="4">{{table.heading}}
+            </th>
+          </tr>
+          <tr ng-repeat="value in table.values">
+            <td 
+              ng-show="value.icon"
+              class="myicon" 
+              rowspan="4"
+            >
+              <img src="{{value.icon}}" />
+            </td>
+            <td class="left-aligned">{{value.key}}</td>
+            <td class="center-aligned">-</td>
+            <td class="right-aligned">{{value.value}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mygraph">
+          <div id="flotcontainer"></div>
+          <!-- <div id="padWidthArea"></div>
+          <div id="padHeightArea"></div>
+          <div id="padWidthStack"></div>
+          <div id="padHeightStack"></div> -->
+          <div id="chartLegend"></div>
+          <div id="chartLegendPie"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

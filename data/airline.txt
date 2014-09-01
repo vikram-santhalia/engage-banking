@@ -1,0 +1,16 @@
+$scope.statementAirlineData = [
+      {"name":"Customer Id"},
+      {"name":"Customer PhNo"},
+      {"name":"Customer City"},
+      {"name":"Customer Email"},
+      {"name":"Customer AccType"},
+      {"name":"Customer Age"},
+      {"name":"Customer Limit"},
+      {"name":"Customer Type"},
+      {"name":"Customer Gender"},
+      {"name":"Customer Balance"},
+      {"name":"Customer LastUsage"},
+      {"name":"Customer Loyal"},
+      {"name":"Customer OnlineLogin"},
+      {"name":"Customer Points"}
+    ];
