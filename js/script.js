@@ -6,6 +6,22 @@ var data1 = [
 [1479597000000, 248], [1484997000000, 208], [1499597000000, 214]
 ];
 
+var dataF = [
+[1354586000000, 253], [1364587000000, 358], [1374588000000, 138],
+[1384589000000, 163], [1394590000000, 131], [1404591000000, 278],
+[1414592000000, 143], [1424593000000, 179], [1434594000000, 123],
+[1444595000000, 159], [1454596000000, 288], [1464597000000, 364],
+[1479597000000, 359], [1484997000000, 308], [1499597000000, 214]
+];
+
+var dataT = [
+[1354586000000, 53], [1364587000000, 148], [1374588000000, 128],
+[1384589000000, 163], [1394590000000, 221], [1404591000000, 248],
+[1414592000000, 153], [1424593000000, 149], [1434594000000, 223],
+[1444595000000, 208], [1454596000000, 88], [1464597000000, 174],
+[1479597000000, 118], [1484997000000, 208], [1499597000000, 114]
+];
+
 var data2 = [
 { label: "Sent",  data: 3500, color: '#eec14e'},
 { label: "Opened",  data: 2500, color: '#99d25d'},
@@ -131,6 +147,94 @@ function setStyle(x,y){
   });
 }
 
+function drawFbAreaChart() { 
+  setStyle(890,220);   
+  var options = {
+    series:{
+      lines: {                         
+        fill: true, show:true,
+        fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.8}] }
+      },
+      clickable: true,
+      hoverable: true,
+      shadowSize: 4,
+      highlightColor: "#f89406",
+      color: '#f89406',
+      points: { show: true, fill: true}
+    },
+    xaxis: {
+      mode: "time",
+      show: true,
+      position: "bottom",
+      tickColor: "#fafafa"
+    },
+    yaxis: {
+      show: true,
+      position: "left",
+      tickColor: "#fafafa",
+      position: "left",
+      color: "black"
+    },
+    grid: {
+      hoverable: true,
+      borderColor: "#d1d1d1",
+      backgroundColor: { colors: ["#ffffff", "#ffffff"] },
+      borderWidth: 1,
+      aboveData: false,
+      markings: [ { xaxis: { from: 0, to: 10 }, yaxis: { from: 0, to: 0 }, color: "#000000" },
+      { xaxis: { from: 0, to: 0 }, yaxis: { from: 0, to: 15 }, color: "#000000" }]
+
+    }
+
+  };
+
+  var plot = $.plot($("#flotcontainer"), [dataF], options);  
+}
+
+function drawTwAreaChart() { 
+  setStyle(890,220);   
+  var options = {
+    series:{
+      lines: {                         
+        fill: true, show:true,
+        fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.8}] }
+      },
+      clickable: true,
+      hoverable: true,
+      shadowSize: 4,
+      highlightColor: "#21ddcc",
+      color: '#21ddcc',
+      points: { show: true, fill: true}
+    },
+    xaxis: {
+      mode: "time",
+      show: true,
+      position: "bottom",
+      tickColor: "#fafafa"
+    },
+    yaxis: {
+      show: true,
+      position: "left",
+      tickColor: "#fafafa",
+      position: "left",
+      color: "black"
+    },
+    grid: {
+      hoverable: true,
+      borderColor: "#d1d1d1",
+      backgroundColor: { colors: ["#ffffff", "#ffffff"] },
+      borderWidth: 1,
+      aboveData: false,
+      markings: [ { xaxis: { from: 0, to: 10 }, yaxis: { from: 0, to: 0 }, color: "#000000" },
+      { xaxis: { from: 0, to: 0 }, yaxis: { from: 0, to: 15 }, color: "#000000" }]
+
+    }
+
+  };
+
+  var plot = $.plot($("#flotcontainer"), [dataT], options);  
+}
+
 
 $( document ).ready(function() {
       setStyle(890,220);
@@ -144,7 +248,29 @@ $(document).on("click","#areachart", function() {
   $("#padWidthArea").css( { display: 'block' });
   $("#padHeightStack").css( { display: 'none' });
   $("#padWidthStack").css( { display: 'none' });
-  drawAreaChart();
+  drawAreaChart("display");
+});
+
+$(document).on("click","#areachartFb", function() {
+  animationClick("#flotcontainer", "animated fadeIn");
+  $("#chartLegend").css( { display: 'none' });
+  $("#chartLegendPie").css( { display: 'none' });
+  $("#padHeightArea").css( { display: 'block' });
+  $("#padWidthArea").css( { display: 'block' });
+  $("#padHeightStack").css( { display: 'none' });
+  $("#padWidthStack").css( { display: 'none' });
+  drawFbAreaChart("facebook");
+});
+
+$(document).on("click","#areachartTw", function() {
+  animationClick("#flotcontainer", "animated fadeIn");
+  $("#chartLegend").css( { display: 'none' });
+  $("#chartLegendPie").css( { display: 'none' });
+  $("#padHeightArea").css( { display: 'block' });
+  $("#padWidthArea").css( { display: 'block' });
+  $("#padHeightStack").css( { display: 'none' });
+  $("#padWidthStack").css( { display: 'none' });
+  drawTwAreaChart("twitter");
 });
 
 $(document).on("click","#piechart", function() {

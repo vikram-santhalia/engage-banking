@@ -993,9 +993,15 @@
   .mytable{
     color:#ffffff;
     border-radius: 3px;
-    padding:10px;
-    font-size: 14px;
+    padding:8px;
+    font-size: 12px;
     cursor:pointer;
+  }
+
+  .tableDiv{
+    display: inline-table;
+    margin-left: 15px;
+    width: 170px;
   }
 
   /*.mytable:hover{
@@ -1008,47 +1014,38 @@
     background-color: #51b7dd;
     opacity: 0.6;
   }
-  .mytable.active{
-    -webkit-box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.4) !important;
-    -moz-box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.4) !important;
-    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.4) !important;
-    font-weight:bolder;
-    opacity: 1 !important;
-  }
-  .mytable:hover{
-    -webkit-box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.4) !important;
-    -moz-box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.4) !important;
-    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.4) !important;
-    font-weight:bolder;
-    opacity: 1 !important;
-  }
-  .mytable.tableDisplay:hover{
-    /*-webkit-box-shadow: 0px 0px 2px 2px rgba(65,146,177,0.6);
-    -moz-box-shadow: 0px 0px 2px 2px rgba(65,146,177,0.6);
-    box-shadow: 0px 0px 2px 2px rgba(65,146,177,0.6);*/
-    font-weight:bolder;
-  }
   .mytable.tableEmail{
     background-color: #f2ab01;
     opacity: 0.7;
-  }
-  .mytable.tableEmail:hover{
-    /*-webkit-box-shadow: 0px 0px 2px 2px rgba(194,137,1,0.6);
-    -moz-box-shadow: 0px 0px 2px 2px rgba(194,137,1,0.6);
-    box-shadow: 0px 0px 2px 2px rgba(194,137,1,0.6);*/
-    font-weight:bolder;
   }
   .mytable.tableSms{
     background-color: #847cc5;
     opacity: 0.7;
   }
-  .mytable.tableSms:hover{
-    /*-webkit-box-shadow: 0px 0px 2px 2px rgba(106,99,158,0.6);
-    -moz-box-shadow: 0px 0px 2px 2px rgba(106,99,158,0.6);
-    box-shadow: 0px 0px 2px 2px rgba(106,99,158,0.6);*/
-    font-weight:bolder;
+  .mytable.tableFacebook{
+    background-color: #f89406;
+    opacity: 0.6;
   }
-
+  .mytable.tableTwitter{
+    background-color: #21ddcc;
+    opacity: 0.6;
+    height:172px;
+  }
+  .mytable.active{
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.3) !important;
+    -moz-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.3) !important;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.3) !important;
+    font-weight:bolder;
+    opacity: 1 !important;
+  }
+  .mytable:hover{
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.3) !important;
+    -moz-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.3) !important;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.3) !important;
+    font-weight:bolder;
+    opacity: 1 !important;
+  }
+  
   .mytable .myheading{
     color:#ffffff;
     height:40px;
@@ -1068,6 +1065,12 @@
   }
   .mytable .myheading.headingSms{
     background-color: #948ec9;
+  }
+  .mytable .myheading.headingFacebook{
+    background-color: #FAB451;
+  }
+  .mytable .myheading.headingTwitter{
+    background-color: #7AEBE0;
   }
 
   .mytable .myicon{

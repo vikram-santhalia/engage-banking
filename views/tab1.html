@@ -27,7 +27,10 @@
   </div>
   <div class="col-md-9">
     <div class="row mytables">
-      <div class="col-md-4"  ng-repeat="table in telcoTables">
+      <div 
+        class="tableDiv" 
+        ng-repeat="table in telcoTables"
+        >
         <table 
           class="table mytable {{table.className}}" 
           id="{{table.id}}"
@@ -41,13 +44,13 @@
             </th>
           </tr>
           <tr ng-repeat="value in table.values">
-            <td 
+           <!--  <td 
               ng-show="value.icon"
               class="myicon" 
               rowspan="4"
             >
               <img src="{{value.icon}}" />
-            </td>
+            </td> -->
             <td class="left-aligned">{{value.key}}</td>
             <td class="center-aligned">-</td>
             <td class="right-aligned">{{value.value}}</td>
