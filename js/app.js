@@ -140,31 +140,32 @@ $scope.statementBankingData = [
 
   $scope.groups = [
     {
-      title: 'Frequent International Flyers',
+      title: 'High Balance in Saving Account',
       open: true,
-      content: 'Users who travel to international destination on regular basis'
+      content: 'Reach such users with ads about Fixed Deposits'
     },
     {
-      title: 'Book hotels but not flights',
+      title: 'Last Online 3 months Back',
       open: false,
-      content: 'Set of users who travel but do not book flights from the site'
+      content: 'Was active on website earlier, not anymore'
     },
     {
-      title: 'Last booked 3 months back',
+      title: 'Requested quote on car loan but never got back',
       open: false,
-      content: 'Registered users but havent visited the site for 3 months'
+      content: 'Looking for loans in last 15 days'
     },
     {
-      title: 'Not App user yet',
+      title: 'Meet criteria for Credit Card',
       open: false,
-      content: 'Registered users who have not yet downloaded the Mobile App'
+      content: 'Age, Spending shows that customer has high propensity to buy'
     },
     {
       title: 'Loyal Customers',
       open: false,
-      content: 'Those who book domestic, international, hotels, packages regularly from the site'
+      content: 'Using service for long time and loyal since then'
     }
   ];
+
 
   $scope.displayTable = [
     {
@@ -556,24 +557,24 @@ $scope.statementBankingData = [
       $scope.metrics[i]['formattedValue'] = numberWithCommas($scope.metrics[i]['value']);
     }
 
-    $scope.savedSegments = [
+     $scope.savedSegments = [
       {
-        name: "Inquire about the packages",
+        name: "Eligible for Personal Loans",
         desc: "",
         reach: "527090"
       },
       {
-        name: "Booked only once",
+        name: "Used your debit card for Offline Shopping",
         desc: "",
         reach: "337025"
       },
       {
-        name: "Signed up before 01/01/2012",
+        name: "Called Customer Care about service",
         desc: "",
         reach: "710181"
       },
       {
-        name: "Birthday in next 7 days",
+        name: "Still receiving paper statements (ads about saving paper and getting e-statement)",
         desc: "",
         reach: "237100"
       }

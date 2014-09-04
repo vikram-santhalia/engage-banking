@@ -14,3 +14,56 @@ $scope.statementBankingData = [
       {"name":"Customer OnlineLogin"},
       {"name":"Customer Points"}
     ];
+
+
+$scope.groups = [
+    {
+      title: 'High Balance in Saving Account',
+      open: true,
+      content: 'Reach such users with ads about Fixed Deposits'
+    },
+    {
+      title: 'Last Online 3 months Back',
+      open: false,
+      content: 'Was active on website earlier, not anymore'
+    },
+    {
+      title: 'Requested quote on car loan but never got back',
+      open: false,
+      content: 'Looking for loans in last 15 days'
+    },
+    {
+      title: 'Meet criteria for Credit Card',
+      open: false,
+      content: 'Age, Spending shows that customer has high propensity to buy'
+    },
+    {
+      title: 'Loyal Customers',
+      open: false,
+      content: 'Using service for long time and loyal since then'
+    }
+  ];
+
+
+  $scope.savedSegments = [
+      {
+        name: "Eligible for Personal Loans",
+        desc: "",
+        reach: "527090"
+      },
+      {
+        name: "Used your debit card for Offline Shopping",
+        desc: "",
+        reach: "337025"
+      },
+      {
+        name: "Called Customer Care about service",
+        desc: "",
+        reach: "710181"
+      },
+      {
+        name: "Still receiving paper statements (ads about saving paper and getting e-statement)",
+        desc: "",
+        reach: "237100"
+      }
+    ];
