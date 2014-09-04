@@ -52,6 +52,7 @@ angular.module( 'engageApp', [
     ];
 
 $scope.statementBankingData = [
+      {"name":""},
       {"name":"Customer Id"},
       {"name":"Customer PhNo"},
       {"name":"Customer City"},
