@@ -51,31 +51,22 @@ angular.module( 'engageApp', [
       {"name":"Greater Than Or Equal To"}
     ];
 
-$scope.statementOTAData = [
-  {"name":""},
-  {"name":"Customer Id"},
-  {"name":"Customer Ph No"},
-  {"name":"Customer Email"},
-  {"name":"Customer Gender"},
-  {"name":"Customer City"},
-  {"name":"Customer FirstName"},
-  {"name":"Customer LastName"},
-  {"name":"Customer Birthday"},
-  {"name":"Signedup Date"},
-  {"name":"Last Purchase"},
-  {"name":"Last Visit to Website"},
-  {"name":"Country"},
-  {"name":"Total Amount Spent"},
-  {"name":"Total Number of Tickets Booked"},
-  {"name":"Total International Tickets Booked"},
-  {"name":"Total Domestic Tickets Booked"},
-  {"name":"Total Hotels Booked"},
-  {"name":"Amount Spent on Intl Tickets"},
-  {"name":"Amount Spent on Domestic Tickets"},
-  {"name":"Amount Spent on Hotels"},
-  {"name":"Amount Spent on Packages"},
-  {"name":"Downloaded App"}
-];
+$scope.statementBankingData = [
+      {"name":"Customer Id"},
+      {"name":"Customer PhNo"},
+      {"name":"Customer City"},
+      {"name":"Customer Email"},
+      {"name":"Customer AccType"},
+      {"name":"Customer Age"},
+      {"name":"Customer Limit"},
+      {"name":"Customer Type"},
+      {"name":"Customer Gender"},
+      {"name":"Customer Balance"},
+      {"name":"Customer LastUsage"},
+      {"name":"Customer Loyal"},
+      {"name":"Customer OnlineLogin"},
+      {"name":"Customer Points"}
+    ];
 
 
 
@@ -422,7 +413,7 @@ $scope.statementOTAData = [
   
     
     $scope.selectedRules = {
-      statementOptions : $scope.statementOTAData[0],
+      statementOptions : $scope.statementBankingData[0],
       conditionOptions : $scope.ruleConditionData[0]
     };
 
@@ -432,7 +423,7 @@ $scope.statementOTAData = [
 
     $scope.addRule = function(value){
       /*var tempData = {
-        statementOptions : $scope.statementOTAData[0],
+        statementOptions : $scope.statementBankingData[0],
         conditionOptions : $scope.ruleConditionData[0]
       };*/
       $scope.ruleData.push(angular.copy($scope.selectedRules));
@@ -624,7 +615,7 @@ $scope.statementOTAData = [
           $scope.metrics[i]['formattedValue'] = numberWithCommas($scope.metrics[i]['value']);
         }  
         $scope.selectedRules = {
-          statementOptions : $scope.statementOTAData[0],
+          statementOptions : $scope.statementBankingData[0],
           conditionOptions : $scope.ruleConditionData[0]
         };
         $scope.ruleData.splice(0,$scope.ruleData.length);
@@ -683,7 +674,7 @@ $scope.statementOTAData = [
         $scope.metrics[i]['formattedValue'] = numberWithCommas($scope.metrics[i]['value']);
       }  
       $scope.selectedRules = {
-        statementOptions : $scope.statementOTAData[0],
+        statementOptions : $scope.statementBankingData[0],
         conditionOptions : $scope.ruleConditionData[0]
       };
       $scope.ruleData.splice(0,$scope.ruleData.length);

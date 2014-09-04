@@ -26,7 +26,7 @@
     <div class="row myrow">
       <div class="rule">
         <select class="form-control action"
-          data-ng-options="action.name for action in statementOTAData" 
+          data-ng-options="action.name for action in statementBankingData" 
           data-ng-model="selectedRules.statementOptions"
         > 
       </select>
@@ -58,7 +58,7 @@
       </select>
       <div class="rule">
         <select class="form-control action"
-          data-ng-options="action.name for action in statementOTAData" 
+          data-ng-options="action.name for action in statementBankingData" 
           data-ng-model="ruleData[$index+1].statementOptions"
         > 
       </select>
