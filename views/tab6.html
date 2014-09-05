@@ -38,10 +38,16 @@
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">Average Download Time</h3>
             </div>
-            <div class="panel-body">
-              Panel content
+            <div class="panel-body times">
+              <div class="" ng-repeat="avgTime in avgTimes">
+                <!-- <span class="count_text">{{metric.name}}&nbsp;({{metric.formattedValue}})</span> -->
+                <progressbar class="progress-bar-striped active {{avgTime.className}}" value="avgTime.value" max="10">
+                </progressbar>
+                
+              <span class="avgTimeText">{{avgTime.value + 's'}}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -51,7 +57,19 @@
               <h3 class="panel-title">Panel title</h3>
             </div>
             <div class="panel-body">
-              Panel content
+              <div class="info-active">
+                <div class="infoDiv">
+                  <span class="infoValue">1230702</span>
+                  <div id="donutHolder">
+                    <div id="donut"></div>
+                    <span id="donutData"></span>   
+                  </div>
+                </div>
+                <div class="perValue">
+                  <span ><i class="fa fa-caret-up"></i>10.34%</span>
+                </div>
+                <span class="previousValue">Previous: 1103446</span>
+              </div>
             </div>
           </div>
         </div>

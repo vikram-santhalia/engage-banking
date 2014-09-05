@@ -1335,8 +1335,110 @@
 
 #multiLineChart{
   width: 870px;
-  height:200px;
+  height:192px;
 }
 
+.times .progress{
+  margin:0;
+  height:15px;
+  border-radius: 20px;
+  border:none;
+  width:80%;
+  float:left;
+  margin-top:10px;
+}
 
+.avgTimeText{
+  font-size:12px;
+  display:inline-block;
+  margin-top: 10px;
+  margin-left: 15px;
+  font-weight: bold;
+}
 
+.times .envelope .progress-bar{
+  background-color: #2574a9;
+  border-radius: 20px;
+  height:15px;
+  margin:0;
+}
+.times .phone .progress-bar{
+  background-color: #239d58;
+  border-radius: 20px;
+  height:15px;
+  margin:0;
+}
+.times .database .progress-bar{
+  background-color: #70757b;
+  border-radius: 20px;
+  height:15px;
+  margin:0;
+}
+.times .hand .progress-bar{
+  background-color: #b9493e;
+  border-radius: 20px;
+  height:15px;
+  margin:0;
+}
+
+.info-active{
+
+}
+
+.infoDiv{
+  font-size:34px;
+}
+
+.perValue{
+  color: #2ed069;
+  height: 30px;
+  text-align: center;
+  border:1px dotted #ededed;
+  width: 50px;
+  left: 350px;
+  background-color: #ffffff;
+  top: 130px;
+  font-weight:700;
+  position: absolute;
+  padding-top: 1.5%;
+  z-index:100;
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
+       -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
+}
+
+.perValue span{
+}
+
+.previousValue{
+  font-size: 20px;
+  margin-top: 32px;
+  display: block;
+  color: #A2A9AC;
+  font-weight: 700;
+  float: left;
+}
+
+#donutHolder {
+    width: 100px;
+    height: 108px;
+    text-align: center;
+    line-height: 350px;
+    font-size: 30px;
+    color: #f00;
+    float: right;
+    position: relative;
+}
+
+#donut {
+    width: 100%;
+    height: 100%;
+}
+
+#donutData {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}

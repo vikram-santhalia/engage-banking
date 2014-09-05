@@ -6,6 +6,11 @@ var data1 = [
 [1479597000000, 248], [1484997000000, 208], [1499597000000, 214]
 ];
 
+ var dataDN = [
+    { label: "Donated", data: 10.34, color: '#2ed069' },
+    { label: "Goal", data: 89.66, color: '#8E9496' }
+];
+
 var dataM1 = [
 [1354586000000, 113], [1364587000000, 125], [1374588000000, 127],
 [1384589000000, 132], [1394590000000, 139], [1404591000000, 144],
@@ -321,6 +326,7 @@ $(document).on("click","#stackchart", function() {
       $("#padWidthArea").css( { display: 'block' });
       $("#padHeightStack").css( { display: 'none' });
       $("#padWidthStack").css( { display: 'none' });
+      drawDonutChart()
       drawAreaChart();
       drawMultiLineChart();
 
@@ -436,4 +442,28 @@ function drawMultiLineChart() {
 
 
   var plot = $.plot($("#multiLineChart"), dataM, options);  
+}
+
+
+function drawDonutChart() {
+    var options = {
+         series: {
+            pie: {
+                innerRadius: 0.7,
+                show: true,
+                label: { show: false },
+                gradient: {
+                  radial: true,
+                  colors: [
+                    {opacity: 0.5},
+                    {opacity: 1.0}
+                  ]
+                }
+            }
+        },
+        legend: { show: false }
+    };
+
+    $.plot($("#donut"), dataDN, options);
+    /*$("#donutData").text(Math.round(dataDN[0].data/dataDN[1].data*100)+"%");*/
 }

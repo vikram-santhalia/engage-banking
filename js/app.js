@@ -144,6 +144,26 @@ $scope.statementBankingData = [
       }
     ];
 
+  $scope.avgTimes = [
+    {
+      value:3.72,
+      className:'envelope'
+    },
+    {
+      value:4.17,
+      className:'phone'
+    },
+    {
+      value:2.13,
+      className:'database'
+    },
+    {
+      value:8.05,
+      className:'hand'
+    }
+  ];
+
+
   $scope.activities = [
     {
       title: 'Time taken to download Email Database is 20s',
