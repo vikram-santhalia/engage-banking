@@ -6,6 +6,35 @@ var data1 = [
 [1479597000000, 248], [1484997000000, 208], [1499597000000, 214]
 ];
 
+var dataM1 = [
+[1354586000000, 113], [1364587000000, 125], [1374588000000, 127],
+[1384589000000, 132], [1394590000000, 139], [1404591000000, 144],
+[1414592000000, 153], [1424593000000, 158], [1434594000000, 167],
+[1444595000000, 174], [1454596000000, 188], [1464597000000, 193],
+[1479597000000, 201], [1484997000000, 218], [1499597000000, 244]
+];
+var dataM2 = [
+[1354586000000, 83], [1364587000000, 95], [1374588000000, 98],
+[1384589000000, 105], [1394590000000, 115], [1404591000000, 122],
+[1414592000000, 129], [1424593000000, 131], [1434594000000, 137],
+[1444595000000, 147], [1454596000000, 151], [1464597000000, 156],
+[1479597000000, 160], [1484997000000, 171], [1499597000000, 177]
+];
+var dataM3 = [
+[1354586000000, 65], [1364587000000, 69], [1374588000000, 73],
+[1384589000000, 76], [1394590000000, 79], [1404591000000, 86],
+[1414592000000, 91], [1424593000000, 99], [1434594000000, 104],
+[1444595000000, 109], [1454596000000, 117], [1464597000000, 123],
+[1479597000000, 129], [1484997000000, 132], [1499597000000, 139]
+];
+var dataM4 = [
+[1354586000000, 41], [1364587000000, 47], [1374588000000, 52],
+[1384589000000, 57], [1394590000000, 62], [1404591000000, 66],
+[1414592000000, 73], [1424593000000, 79], [1434594000000, 84],
+[1444595000000, 95], [1454596000000, 103], [1464597000000, 113],
+[1479597000000, 120], [1484997000000, 127], [1499597000000, 133]
+];
+
 var dataF = [
 [1354586000000, 253], [1364587000000, 358], [1374588000000, 138],
 [1384589000000, 163], [1394590000000, 131], [1404591000000, 278],
@@ -305,6 +334,7 @@ $(document).on("click","#stackchart", function() {
       $("#padHeightStack").css( { display: 'none' });
       $("#padWidthStack").css( { display: 'none' });
       drawAreaChart();
+      drawMultiLineChart();
 
   }, 500 );
 
@@ -333,3 +363,89 @@ function animationClick(element, animation){
           element.removeClass('animated ' + animation);
       }, 2000);
 };
+
+
+function drawMultiLineChart() { 
+
+  var dataM = [
+    {
+      data: dataM1,
+      lines: {                         
+          fill: false, show:true
+      },
+      clickable: true,
+      hoverable: true,
+      shadowSize: 4,
+      highlightColor: "#2574a9",
+      color: '#2574a9',
+      points: { show: true, fill: true, fillColor: '#669EC3'}
+    },
+    {
+      data: dataM2,
+      lines: {                         
+          fill: false, show:true
+      },
+      clickable: true,
+      hoverable: true,
+      shadowSize: 4,
+      highlightColor: "#239d58",
+      color: '#239d58',
+      points: { show: true, fill: true, fillColor: '#65BA8A'}
+    },
+    {
+      data: dataM3,
+      lines: {                         
+          fill: false, show:true
+      },
+      clickable: true,
+      hoverable: true,
+      shadowSize: 4,
+      highlightColor: "#70757b",
+      color: '#70757b',
+      points: { show: true, fill: true, fillColor: '#9B9EA3'}
+    },
+    {
+      data: dataM4,
+      lines: {                         
+          fill: false, show:true
+      },
+      clickable: true,
+      hoverable: true,
+      shadowSize: 4,
+      highlightColor: "#b9493e",
+      color: '#b9493e',
+      points: { show: true, fill: true, fillColor: '#CE8078'}
+    },
+  ];
+
+  var options = {
+    xaxis: {
+      mode: "time",
+      timeformat: "%m/%d/%y",
+      show: true,
+      position: "bottom",
+      tickColor: "#f1f1f1"
+    },
+    yaxis: {
+      show: true,
+      position: "left",
+      tickColor: "#f1f1f1",
+      position: "left",
+      color: "black"
+    },
+    grid: {
+      hoverable: true,
+      borderColor: "#d1d1d1",
+      backgroundColor: { colors: ["#ffffff", "#ffffff"] },
+      borderWidth: 1,
+      aboveData: false,
+      markings: [ { xaxis: { from: 0, to: 10 }, yaxis: { from: 0, to: 0 }, color: "#000000" },
+      { xaxis: { from: 0, to: 0 }, yaxis: { from: 0, to: 15 }, color: "#000000" }]
+
+    }
+
+  };
+
+
+  var plot = $.plot($("#multiLineChart"), dataM, options);  
+}

@@ -1,0 +1,73 @@
+$scope.statementEcomData = [
+  {"name":"Customer Ph No"},
+  {"name":"Customer Email"},
+  {"name":"Customer Gender"},
+  {"name":"Customer City"},
+  {"name":"Customer FirstName"},
+  {"name":"Customer LastName"},
+  {"name":"Customer Birthday"},
+  {"name":"Signedup Date"},
+  {"name":"Last Purchase"},
+  {"name":"Last Visit to Website"},
+  {"name":"Country"},
+  {"name":"Total Amount Spent"},
+  {"name":"Total Number of Products Bought"},
+  {"name":"Downloaded App"},
+  {"name":"Loyal Customer"},
+  {"name":"Number of times carted"},
+  {"name":"Number of times bought"},
+  {"name":"Number of products checked"}
+];
+
+
+$scope.groups = [
+    {
+      title: 'Frequent Carters',
+      open: true,
+      content: 'Users who cart multiple times in a week but barely buy'
+    },
+    {
+      title: 'Registered long back but bought once',
+      open: false,
+      content: 'Users who registered months ago, but are not buying anymore'
+    },
+    {
+      title: 'Checks multiple products',
+      open: false,
+      content: 'Users who compare 5-10 products during every visit'
+    },
+    {
+      title: 'Buys only high priced products',
+      open: false,
+      content: 'Users with an interest in buying expensive products'
+    },
+    {
+      title: 'Not downloaded App yet',
+      open: false,
+      content: 'Registered user but hasnt downloaded App yet'
+    }
+  ];
+
+
+  $scope.savedSegments = [
+      {
+        name: "Female Buyers",
+        desc: "",
+        reach: "527090"
+      },
+      {
+        name: "Loyal Customer",
+        desc: "",
+        reach: "337025"
+      },
+      {
+        name: "Signed up in last 7 days",
+        desc: "",
+        reach: "710181"
+      },
+      {
+        name: "High Volume low price buyer",
+        desc: "",
+        reach: "237100"
+      }
+    ];

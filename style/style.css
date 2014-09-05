@@ -965,6 +965,9 @@
 
   .mycampaigns .panel-group .panel .panel-heading a{
     text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
   }
 
   .mycampaigns .panel-group .panel .panel-heading{
@@ -1266,4 +1269,74 @@
   top: 9%;
   left: 70.4%;
 }
+
+
+
+.activity_icon{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  border: 2px solid #ffffff;
+}
+
+.activity_icon.envelope{
+  background-color: #2574a9;
+  box-shadow: 0 0 1px 2px #2574a9;
+}
+.activity_icon.phone{
+  background-color: #239d58;
+  box-shadow: 0 0 1px 2px #239d58;
+}
+.activity_icon.database{
+  background-color: #70757b;
+  box-shadow: 0 0 1px 2px #70757b;
+}
+.activity_icon.hand{
+  background-color: #b9493e;
+  box-shadow: 0 0 1px 2px #b9493e;
+}
+
+.activity-panel{
+  height:420px;
+  overflow-x:scroll;
+  padding-bottom: 0;
+}
+
+.activity{
+  margin-bottom:12px;
+}
+
+.activity_title{
+  font-weight: 500;
+  font-size: 12px;
+  text-shadow: none;
+  margin-left: -18px;
+  padding-right: 0px;
+}
+
+.activity_timestamp{
+  margin-top: 5px;
+  margin-left: -16px;
+  color: #cbd3d7;
+  font-weight: 700;
+}
+
+.activity_feed{
+  margin-left: 40px;
+}
+
+.custom-onboard-col{
+  width:71%;
+}
+
+#multiLineChart{
+  width: 870px;
+  height:200px;
+}
+
+
 
