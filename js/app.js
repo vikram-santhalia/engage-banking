@@ -163,79 +163,88 @@ $scope.statementBankingData = [
     }
   ];
 
-
-  $scope.activities = [
+  $scope.datedActivities = [
     {
-      title: 'Time taken to download Email Database is 20s',
-      timestamp: 'September 05, 03:07:42',
-      icon: 'fa-envelope',
-      iconcolor: 'envelope' 
+      date: "Today",
+      data: [
+        {
+          title: 'Time taken to download Email Database is 20s',
+          timestamp: 'September 05, 03:07:42',
+          icon: 'fa-envelope',
+          iconcolor: 'envelope' 
+        },
+        {
+          title: 'Completed download of CRM Database',
+          timestamp: 'September 05, 03:57:02',
+          icon: 'fa-database',
+          iconcolor: 'database'
+        },
+        {
+          title: 'Updated ClickStream Data into Engage360',
+          timestamp: 'September 05, 03:44:16',
+          icon: 'fa-hand-o-up',
+          iconcolor: 'hand'
+        },
+        {
+          title: 'Completed download of ClickStream',
+          timestamp: 'September 05, 03:43:22',
+          icon: 'fa-hand-o-up',
+          iconcolor: 'hand'
+        },
+        {
+          title: 'Time taken to download CRM Database is 172s',
+          timestamp: 'September 05, 03:44:35',
+          icon: 'fa-database',
+          iconcolor: 'database'
+        },
+        {
+          title: 'Time taken to download ClickStream is 172s',
+          timestamp: 'September 05, 03:43:18',
+          icon: 'fa-hand-o-up',
+          iconcolor: 'hand'
+        },  
+        {
+          title: 'Completed download of CallCenter Data',
+          timestamp: 'September 05,  03:42:39',
+          icon: 'fa-phone',
+          iconcolor: 'phone'
+        },
+        {
+          title: 'Time taken to download CallCenter Data is 172s',
+          timestamp: 'September 05, 03:41:20',
+          icon: 'fa-phone',
+          iconcolor: 'phone'
+        },
+        {
+          title: 'Updated Email Database into Engage360',
+          timestamp: 'September 04, 03:41:19',
+          icon: 'fa-envelope',
+          iconcolor: 'envelope'
+        }
+      ]
     },
     {
-      title: 'Completed download of CRM Database',
-      timestamp: 'September 05, 03:57:02',
-      icon: 'fa-database',
-      iconcolor: 'database'
-    },
-    {
-      title: 'Updated ClickStream Data into Engage360',
-      timestamp: 'September 05, 03:44:16',
-      icon: 'fa-hand-o-up',
-      iconcolor: 'hand'
-    },
-    {
-      title: 'Completed download of ClickStream',
-      timestamp: 'September 05, 03:43:22',
-      icon: 'fa-hand-o-up',
-      iconcolor: 'hand'
-    },
-    {
-      title: 'Time taken to download CRM Database is 172s',
-      timestamp: 'September 05, 03:44:35',
-      icon: 'fa-database',
-      iconcolor: 'database'
-    },
-    {
-      title: 'Time taken to download ClickStream is 172s',
-      timestamp: 'September 05, 03:43:18',
-      icon: 'fa-hand-o-up',
-      iconcolor: 'hand'
-    },  
-    {
-      title: 'Completed download of CallCenter Data',
-      timestamp: 'September 05,  03:42:39',
-      icon: 'fa-phone',
-      iconcolor: 'phone'
-    },
-    {
-      title: 'Time taken to download CallCenter Data is 172s',
-      timestamp: 'September 05, 03:41:20',
-      icon: 'fa-phone',
-      iconcolor: 'phone'
-    },
-    {
-      title: 'Updated Email Database into Engage360',
-      timestamp: 'September 04, 03:41:19',
-      icon: 'fa-envelope',
-      iconcolor: 'envelope'
-    },
-    {
-      title: 'Completed download of Email Database',
-      timestamp: 'September 04,  03:40:52',
-      icon: 'fa-envelope',
-      iconcolor: 'envelope'
-    },
-    {
-      title: 'Updated CallCenter Data into Engage360',
-      timestamp: 'September 05, 03:42:55',
-      icon: 'fa-phone',
-      iconcolor: 'phone'
-    },
-    {
-      title: 'Time taken to download Email Database is 172s',
-      timestamp: 'September 04,  03:40:05',
-      icon: 'fa-envelope',
-      iconcolor: 'envelope'
+      date: "September 04",
+      data: [
+         {
+            title: 'Completed download of Email Database',
+            timestamp: 'September 04,  03:40:52',
+            icon: 'fa-envelope',
+            iconcolor: 'envelope'
+          },
+          {
+            title: 'Updated CallCenter Data into Engage360',
+            timestamp: 'September 05, 03:42:55',
+            icon: 'fa-phone',
+            iconcolor: 'phone'
+          },
+          {
+            title: 'Time taken to download Email Database is 172s',
+            timestamp: 'September 04,  03:40:05',
+            icon: 'fa-envelope',
+            iconcolor: 'envelope'
+          }
+      ]
     }
   ];
 

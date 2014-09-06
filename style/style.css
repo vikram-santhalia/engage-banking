@@ -823,6 +823,7 @@
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+    background-color: #ededed;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -1302,12 +1303,15 @@
 
 .activity-panel{
   height:420px;
-  overflow-x:scroll;
+  overflow-x:hidden;
+  overflow-y:scroll;
   padding-bottom: 0;
 }
 
 .activity{
   margin-bottom:12px;
+  padding-top: 10px;
+  border-bottom: 1px dotted #d5d5d5;
 }
 
 .activity_title{
@@ -1349,6 +1353,7 @@
 }
 
 .avgTimeText{
+  width:50px;
   font-size:12px;
   display:inline-block;
   margin-top: 10px;
@@ -1395,9 +1400,9 @@
   text-align: center;
   border:1px dotted #ededed;
   width: 50px;
-  left: 350px;
+  left: 320px;
   background-color: #ffffff;
-  top: 130px;
+  top: 128px;
   font-weight:700;
   position: absolute;
   padding-top: 1.5%;
@@ -1420,14 +1425,16 @@
 }
 
 #donutHolder {
-    width: 100px;
-    height: 108px;
+    width: 105px;
+    height: 105px;
     text-align: center;
     line-height: 350px;
+    margin-bottom: 3px;
     font-size: 30px;
     color: #f00;
     float: right;
     position: relative;
+    margin-right: 30px
 }
 
 #donut {
@@ -1441,4 +1448,15 @@
     left: 0;
     z-index: 1;
     width: 100%;
+}
+
+.activity_seg{
+  background-color: #ededed;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 5px;
+  margin-top: -15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e3d4f;
 }
