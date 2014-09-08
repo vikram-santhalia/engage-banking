@@ -469,7 +469,7 @@ $scope.statementBankingData = [
   $scope.engageSegment = function(segment,desc){
     $scope.engagedSegment.name = segment;
     $scope.engagedSegment.desc = desc;
-    $scope.tabs[3].active = true;
+    $scope.tabs[4].active = true;
   }
 
   $scope.status = {
@@ -733,7 +733,7 @@ $scope.statementBankingData = [
         };
         $scope.ruleData.splice(0,$scope.ruleData.length);
         $scope.ruleData = [$scope.selectedRules];
-        $scope.tabs[2].active = true;
+        $scope.tabs[3].active = true;
       } 
     };
 
