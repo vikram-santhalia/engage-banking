@@ -1339,7 +1339,7 @@
 
 #multiLineChart{
   width: 870px;
-  height:192px;
+  height:169px;
 }
 
 .times .progress{
@@ -1459,4 +1459,41 @@
   font-size: 14px;
   font-weight: 600;
   color: #1e3d4f;
+}
+
+.active_legends{
+  margin:0px;
+  margin-bottom: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding-left: 60px;
+}
+
+.onboardTab .panel-heading{
+  padding:7px;
+}
+
+
+.legend_block{
+  height: 10px;
+  width: 20px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.legend_text{
+  display: inline-block;
+}
+
+.bg_email{
+  background-color: #2574a9; 
+}
+.bg_crm{
+  background-color: #70757b; 
+}
+.bg_click{
+  background-color: #b9493e; 
+}
+.bg_call{
+  background-color: #239d58; 
 }
