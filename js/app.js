@@ -167,12 +167,12 @@ $scope.statementBankingData = [
     {
       date: "Today",
       data: [
-        {
+        /*{
           title: 'Time taken to download Email Database is 20s',
           timestamp: 'September 05, 03:07:42',
           icon: 'fa-envelope',
           iconcolor: 'envelope' 
-        },
+        },*/
         {
           title: 'Completed download of CRM Database',
           timestamp: 'September 05, 03:57:02',
@@ -191,30 +191,30 @@ $scope.statementBankingData = [
           icon: 'fa-hand-o-up',
           iconcolor: 'hand'
         },
-        {
+        /*{
           title: 'Time taken to download CRM Database is 172s',
           timestamp: 'September 05, 03:44:35',
           icon: 'fa-database',
           iconcolor: 'database'
-        },
-        {
+        },*/
+        /*{
           title: 'Time taken to download ClickStream is 172s',
           timestamp: 'September 05, 03:43:18',
           icon: 'fa-hand-o-up',
           iconcolor: 'hand'
-        },  
+        }, */ 
         {
           title: 'Completed download of CallCenter Data',
           timestamp: 'September 05,  03:42:39',
           icon: 'fa-phone',
           iconcolor: 'phone'
         },
-        {
+        /*{
           title: 'Time taken to download CallCenter Data is 172s',
           timestamp: 'September 05, 03:41:20',
           icon: 'fa-phone',
           iconcolor: 'phone'
-        },
+        },*/
         {
           title: 'Updated Email Database into Engage360',
           timestamp: 'September 04, 03:41:19',
@@ -237,13 +237,13 @@ $scope.statementBankingData = [
             timestamp: 'September 05, 03:42:55',
             icon: 'fa-phone',
             iconcolor: 'phone'
-          },
+          }/*,
           {
             title: 'Time taken to download Email Database is 172s',
             timestamp: 'September 04,  03:40:05',
             icon: 'fa-envelope',
             iconcolor: 'envelope'
-          }
+          }*/
       ]
     }
   ];
