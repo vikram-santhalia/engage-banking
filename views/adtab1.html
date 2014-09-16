@@ -2,10 +2,73 @@
     <h4>Display</h4>
   </div>
   <div class="row custom-row">
-    <div class="col-sm-6 margin-top-10 input_row ">
+    <div class="col-sm-5 margin-top-10 input_row ">
       <span class="btn btn-default btn-file">
         Upload Banner <input type="file" nv-file-select="" uploader="display.uploader">
       </span>
+      <div class="settings">
+        <div class="basic">
+          <span class="heading" id="display_basic_settings"><i class="fa fa-gear"></i> Basic Settings</span>
+          <div class="basic_setting_options" id="display_basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Budget</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Publishers</label>
+                <div class="col-sm-9">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Yes
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> No
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-sm-3 control-label">Start Date</label>
+                <div class="col-sm-9">
+                  <input id="meeting" class="form-control input-sm" type="date" value="2014-09-16"/>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="advanced margin-top-10">
+          <span class="heading" id="display_advanced_settings"><i class="fa fa-gear"></i> Advanced Settings</span>
+          <div class="basic_setting_options" id="display_advanced">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Bid Range</label>
+                <div class="col-sm-9">
+                  <input type="range" class="input-sm" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Impresssion Cap</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Bid By Publisher</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-sm-3 control-label">Bid By Ad Size</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-sm-5 margin-top-10 custom-row">
       <div class="banner_preview"  >
@@ -13,6 +76,25 @@
         <div class="banners" ng-repeat="item in display.uploader.queue">
           <div>
             <div ng-show="display.uploader.isHTML5" ng-thumb="{ file: display.uploader.queue[display.uploader.queue.length - 1]._file, height: 235 }"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 margin-top-10">
+      <div class="quality_check">
+        <div class="btn btn-sm btn-primary" ng-click="addqc()">QC Content</div>
+        <div class="qc" ng-repeat="qc in qcDisplay">
+          <div class="row">
+            <div class="col-sm-9">
+              <input type="text" 
+              ng-model="qc.doneBy" 
+              class="form-control input-sm" 
+              ng-disabled="qc.done">
+            </div>
+              <div class="right_btn" ng-click="qcDone($index,qc.doneby)"
+              ng-hide="qc.done">
+                <img src="./images/tick.png" />
+              </div>
           </div>
         </div>
       </div>

@@ -639,7 +639,7 @@
   .active_container{
     border: 1px solid #dbdbdb;
     margin: 15px 0px 0px 139px;
-    width: 860px;
+    width: 999px;
     padding: 20px;
     padding-bottom: 0px;
     background-color: #f9f9f9;
@@ -1500,4 +1500,71 @@
 }
 .bg_call{
   background-color: #239d58; 
+}
+
+
+.basic .heading, .advanced .heading{
+  border-bottom: none;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
+  font-size:14px;
+  cursor: pointer;
+  padding:3px;
+}
+
+.basic .heading:hover, .advanced .heading:hover{
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: 10px;
+  font-size:14px;
+  background-color: #68b2e5;
+  border:1px solid #497DA0;
+  border-radius: 2px;
+}
+
+.basic_setting_options{
+  padding: 5px 10px;
+  display: none;
+}
+
+.basic_setting_options input:not([type=checkbox]){
+  width:170px;
+  margin-bottom: 0px;
+}
+
+.basic_setting_options input[type=checkbox]{
+  width:auto;
+  margin-bottom: 0px;
+}
+
+.basic_setting_options label{
+  text-align: left !important;
+}
+
+.basic_setting_options .form-group{
+  margin-bottom: 5px;
+}
+
+.qc{
+  width: 145px;
+  margin-top: 10px;
+}
+
+.qc input{
+  width:auto;
+  margin-bottom: 0px;
+  height:20px;
+  padding:2px;
+}
+
+.qc .right_btn{
+  float: left;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-left: 5px;
+  cursor: pointer;
+  position: relative;
 }

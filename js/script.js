@@ -318,6 +318,23 @@ $(document).on("click","#stackchart", function() {
   drawStackChart();
 });
 
+$(document).on("click","#display_basic_settings", function() {
+  if ( $( "#display_basic" ).is( ":hidden" ) ) {
+    $( "#display_basic" ).slideDown( "fast" );
+  } else {
+    $( "#display_basic" ).hide();
+  }
+});
+
+$(document).on("click","#display_advanced_settings", function() {
+  if ( $( "#display_advanced" ).is( ":hidden" ) ) {
+    $( "#display_advanced" ).slideDown( "fast" );
+  } else {
+    $( "#display_advanced" ).hide();
+  }
+});
+
+
 
   setTimeout( function(){
       setStyle(890,220);

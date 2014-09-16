@@ -103,7 +103,7 @@ $scope.statementBankingData = [
       {
         'name': "Data On-Boarding",
         route: "./views/tab6.html",
-        active: true,
+        active: false,
         icon:"images/icon_9.png",
         disabled: false
       },
@@ -131,7 +131,7 @@ $scope.statementBankingData = [
       {
         'name': "Engage Segments",
         route: "./views/tab4.html",
-        active: false,
+        active: true,
         icon:"images/icon_4.png",
         disabled: false
       },
@@ -509,6 +509,12 @@ $scope.statementBankingData = [
         disabled: false
       },
       {
+        'name': "Cross-Device",
+        route: "./views/adtab7.html",
+        active: false,
+        disabled: false
+      },
+      {
         'name': "Summary",
         route: "./views/adtab6.html",
         active: false,
@@ -778,6 +784,24 @@ $scope.statementBankingData = [
         'email' :    {'saved':'No','subject':'','banner':''},
         'sms' :      {'saved':'No','description':''}
       };
+    }
+
+
+    $scope.qcDisplay = [
+    ];
+
+    $scope.addqc = function(){
+      var qc = { doneBy: "",done: false};
+      $scope.qcDisplay.push(qc);
+    }
+
+    $scope.qcDone = function(index){
+      if($scope.qcDisplay[index].doneBy.length < 1){
+        growl.addErrorMessage("Please add your name to complete QC.");
+      }
+      else{
+        $scope.qcDisplay[index].done = true ;
+      }
     }
 
     $scope.cancel = function(){
