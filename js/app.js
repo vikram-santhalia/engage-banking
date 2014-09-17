@@ -122,7 +122,7 @@ angular.module( 'engageApp', [
       {
         'name': "Data On-Boarding",
         route: "./views/tab6.html",
-        active: false,
+        active: true,
         icon:"images/icon_9.png",
         disabled: false
       },
@@ -150,7 +150,7 @@ angular.module( 'engageApp', [
       {
         'name': "Engage Segments",
         route: "./views/tab4.html",
-        active: true,
+        active: false,
         icon:"images/icon_4.png",
         disabled: false
       },
