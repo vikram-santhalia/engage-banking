@@ -1,46 +1,139 @@
-<div class="row heading custom-row" ng-controller="facebookCtrl">
-    <h4>Facebook</h4>
-  <div class="row custom-row">
-    <div class="col-sm-6 margin-top-10 input_row ">
-      <input type="text" ng-model="fbTitle" class="form-control" placeholder="Title">
-      <textarea class="form-control" ng-model="fbDesc" cols="10" placeholder="Text"></textarea>
-      <span class="btn btn-default btn-file">
-        Upload Banner <input type="file" nv-file-select="" uploader="fb.uploader">
-      </span>
-    </div>
-    <div class="col-sm-5 margin-top-10 custom-row">
-      <div class="banner_preview" >
-        <div class="row fixed_row">
-          <div class="fb_title">
-            <h5>{{fbTitle}}</h5>
+<div ng-controller="facebookCtrl">
+  <div class="row heading custom-row">
+      <h4>Facebook</h4>
+  </div>
+    <div class="row custom-row">
+      <div class="col-sm-5 margin-top-10 input_row ">
+        <input type="text" ng-model="fbTitle" class="form-control" placeholder="Title">
+        <textarea class="form-control" ng-model="fbDesc" cols="10" placeholder="Text"></textarea>
+        <span class="btn btn-default btn-file">
+          Upload Banner <input type="file" nv-file-select="" uploader="fb.uploader" />
+        </span>
+        <div class="settings">
+          <div class="basic">
+            <span class="heading" id="facebook_basic_settings"><i class="fa fa-gear"></i> Basic Settings</span>
+            <div class="basic_setting_options" id="facebook_basic">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Budget</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control input-sm" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-sm-4 control-label">Start Date</label>
+                  <div class="col-sm-8">
+                    <input id="meeting" class="form-control input-sm" type="date" value="2014-09-16"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Enable RHS</label>
+                  <div class="col-sm-8">
+                    <div class="onoffswitch1">
+                        <input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox1" id="myonoffswitch1">
+                        <label class="onoffswitch-label1" for="myonoffswitch1">
+                            <span class="onoffswitch-inner1"></span>
+                            <span class="onoffswitch-switch1"></span>
+                        </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Enable NewsFeed</label>
+                  <div class="col-sm-8">
+                    <div class="onoffswitch2">
+                        <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2">
+                        <label class="onoffswitch-label2" for="myonoffswitch2">
+                            <span class="onoffswitch-inner2"></span>
+                            <span class="onoffswitch-switch2"></span>
+                        </label>
+                    </div>
+                  </div>
+                </div>
+                
+              </form>
+            </div>
+          </div>
+          <div class="advanced margin-top-10">
+            <span class="heading" id="facebook_advanced_settings"><i class="fa fa-gear"></i> Advanced Settings</span>
+            <div class="basic_setting_options" id="facebook_advanced">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Bid Range</label>
+                  <div class="col-sm-8">
+                    <input type="number" class="form-control input-sm range" min="0" max="10" step="0.5"> -
+                    <input type="number" class="form-control input-sm range" min="0" max="10" step="0.5">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Impresssion Cap</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control input-sm" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Bid By time of day</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control input-sm" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-7">
-            <div class="fb_banner_preview"  >
-              <span ng-class="{remove:fb.uploader.queue.length > 0}">Banner Preview</span>
-              <div class="banners" ng-repeat="item in fb.uploader.queue">
-                <div>
-                  <div ng-show="fb.uploader.isHTML5" ng-thumb="{ file: fb.uploader.queue[fb.uploader.queue.length - 1]._file, height: 135 }">
+      </div>
+      <div class="col-sm-5 margin-top-10 custom-row">
+        <div class="banner_preview" >
+          <div class="row fixed_row">
+            <div class="fb_title">
+              <h5>{{fbTitle}}</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-7">
+              <div class="fb_banner_preview"  >
+                <span ng-class="{remove:fb.uploader.queue.length > 0}">Banner Preview</span>
+                <div class="banners" ng-repeat="item in fb.uploader.queue">
+                  <div>
+                    <div ng-show="fb.uploader.isHTML5" ng-thumb="{ file: fb.uploader.queue[fb.uploader.queue.length - 1]._file, height: 135 }">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="col-sm-5">
+              <div class="fbBannerDesc">
+                <p>{{fbDesc}}</p>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-5">
-            <div class="fbBannerDesc">
-              <p>{{fbDesc}}</p>
+          
+        </div>
+      </div>
+      <div class="col-sm-1 margin-top-10">
+        <div class="quality_check">
+          <div class="btn btn-sm btn-primary" ng-click="addqc()">QC Content</div>
+          <div class="qc" ng-repeat="qc in qcFacebook">
+            <div class="row">
+              <div class="col-sm-9">
+                <input type="text" 
+                ng-model="qc.doneBy" 
+                class="form-control input-sm" 
+                ng-disabled="qc.done">
+              </div>
+                <div class="right_btn" ng-click="qcDone($index)"
+                ng-hide="qc.done">
+                  <img src="./images/tick.png" />
+                </div>
             </div>
           </div>
         </div>
-        
       </div>
     </div>
-  </div>
-  <div class="row custom-row">
-    <div class="pull-right save_skip">
-      <div class="btn btn-sm btn-default" ng-click="skip('facebook',$index)">SKIP</div>
-      <div class="btn btn-sm btn-primary" ng-click="saved('facebook',$index)">SAVE &amp; CONTINUE</div>
+    <div class="row custom-row">
+      <div class="pull-right save_skip">
+        <div class="btn btn-sm btn-default" ng-click="skip('facebook',$index)">SKIP</div>
+        <div class="btn btn-sm btn-primary" ng-click="saved('facebook',$index)">SAVE &amp; CONTINUE</div>
+      </div>
     </div>
-  </div>
-</div>  
+</div>

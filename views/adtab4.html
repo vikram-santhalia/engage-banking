@@ -1,37 +1,126 @@
-<div class="row heading custom-row" ng-controller="emailCtrl">
-    <h4>Email</h4>
-  <div class="row custom-row">
-    <div class="col-sm-6 margin-top-10 input_row ">
-      <input type="text" class="form-control" ng-model="emailSubject" placeholder="Subject">
-      <span class="btn btn-default btn-file">
-        Upload Email File <input type="file" nv-file-select="" uploader="email.uploader">
-      </span>
-    </div>
-    <div class="col-sm-5 margin-top-10 custom-row">
-      <div class="banner_preview" >
-        <div class="row fixed_row">
-          <div class="fb_title">
-            <h5>{{emailSubject}}</h5>
+<div ng-controller="emailCtrl">
+  <div class="row heading custom-row">
+      <h4>Email</h4>
+  </div>
+    <div class="row custom-row">
+      <div class="col-sm-5 margin-top-10 input_row ">
+        <input type="text" class="form-control" ng-model="emailSubject" placeholder="Subject">
+        <span class="btn btn-default btn-file">
+          Upload Email File <input type="file" nv-file-select="" uploader="email.uploader">
+        </span>
+        <div class="settings margin-top-10">
+          <div class="basic">
+            <span class="heading" id="email_basic_settings"><i class="fa fa-gear"></i> Basic Settings</span>
+            <div class="basic_setting_options" id="email_basic">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Sent Date</label>
+                  <div class="col-sm-8">
+                    <input id="meeting" class="form-control input-sm" type="date" value="2014-09-16"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-sm-4 control-label">Sent Time</label>
+                  <div class="col-sm-8">
+                    <input type="time" name="usr_time" class="form-control input-sm" value="00:00:00" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">From Name</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control input-sm" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">From Email Address</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control input-sm" placeholder="">
+                  </div>
+                </div>
+                
+              </form>
+            </div>
+          </div>
+          <div class="advanced margin-top-10">
+            <span class="heading" id="email_advanced_settings"><i class="fa fa-gear"></i> Advanced Settings</span>
+            <div class="basic_setting_options" id="email_advanced">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Track Open</label>
+                  <div class="col-sm-8">
+                    <div class="onoffswitch3">
+                        <input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox3" id="myonoffswitch3">
+                        <label class="onoffswitch-label3" for="myonoffswitch3">
+                            <span class="onoffswitch-inner3"></span>
+                            <span class="onoffswitch-switch3"></span>
+                        </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Track Clicks</label>
+                  <div class="col-sm-8">
+                    <div class="onoffswitch4">
+                        <input type="checkbox" name="onoffswitch4" class="onoffswitch-checkbox4" id="myonoffswitch4">
+                        <label class="onoffswitch-label4" for="myonoffswitch4">
+                            <span class="onoffswitch-inner4"></span>
+                            <span class="onoffswitch-switch4"></span>
+                        </label>
+                    </div>
+                  </div>
+                </div>
+                
+                
+              </form>
+            </div>
           </div>
         </div>
-        <div class="row">
-            <div class="email_banner_preview"  >
-              <span ng-class="{remove:email.uploader.queue.length > 0}">Email Preview</span>
-              <div class="banners" ng-repeat="item in email.uploader.queue">
-                <div>
-                  <div ng-show="email.uploader.isHTML5" ng-thumb="{ file: email.uploader.queue[email.uploader.queue.length - 1]._file, height: 183 }">
+      </div>
+      <div class="col-sm-5 margin-top-10 custom-row">
+        <div class="banner_preview" >
+          <div class="row fixed_row">
+            <div class="fb_title">
+              <h5>{{emailSubject}}</h5>
+            </div>
+          </div>
+          <div class="row">
+              <div class="email_banner_preview"  >
+                <span ng-class="{remove:email.uploader.queue.length > 0}">Email Preview</span>
+                <div class="banners" ng-repeat="item in email.uploader.queue">
+                  <div>
+                    <div ng-show="email.uploader.isHTML5" ng-thumb="{ file: email.uploader.queue[email.uploader.queue.length - 1]._file, height: 183 }">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
+          
         </div>
-        
+      </div>
+      <div class="col-sm-1 margin-top-10">
+        <div class="quality_check">
+          <div class="btn btn-sm btn-primary" ng-click="addqc()">QC Content</div>
+          <div class="qc" ng-repeat="qc in qcEmail">
+            <div class="row">
+              <div class="col-sm-9">
+                <input type="text" 
+                ng-model="qc.doneBy" 
+                class="form-control input-sm" 
+                ng-disabled="qc.done">
+              </div>
+                <div class="right_btn" ng-click="qcDone($index)"
+                ng-hide="qc.done">
+                  <img src="./images/tick.png" />
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row custom-row">
-    <div class="pull-right save_skip save_skip_email">
-      <div class="btn btn-sm btn-default" ng-click="skip('email',$index)">SKIP</div>
-      <div class="btn btn-sm btn-primary" ng-click="saved('email',$index)">SAVE &amp; CONTINUE</div>
+    <div class="row custom-row">
+      <div class="pull-right save_skip save_skip_email">
+        <div class="btn btn-sm btn-default" ng-click="skip('email',$index)">SKIP</div>
+        <div class="btn btn-sm btn-primary" ng-click="saved('email',$index)">SAVE &amp; CONTINUE</div>
+      </div>
     </div>
-  </div>
+</div>

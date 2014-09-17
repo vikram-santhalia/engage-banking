@@ -2,8 +2,89 @@
     <h4>Twitter</h4>
   </div>
   <div class="row custom-row">
-    <div class="col-sm-6 margin-top-10 input_row ">
+    <div class="col-sm-5 margin-top-10 input_row ">
       <textarea class="form-control margin-top-10" ng-model="twitterDesc" rows="6" cols="30" placeholder="Enter 140 characters"></textarea>
+    </div>
+    <div class="col-sm-5 margin-top-10">
+      <div class="settings margin-top-10">
+        <div class="basic">
+          <span class="heading" id="twitter_basic_settings"><i class="fa fa-gear"></i> Basic Settings</span>
+          <div class="basic_setting_options" id="twitter_basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Budget</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-sm-4 control-label">Start Date</label>
+                <div class="col-sm-8">
+                  <input id="meeting" class="form-control input-sm" type="date" value="2014-09-16"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Cost Per Follow</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+        <div class="advanced margin-top-10">
+          <span class="heading" id="twitter_advanced_settings"><i class="fa fa-gear"></i> Advanced Settings</span>
+          <div class="basic_setting_options" id="twitter_advanced">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Bid Range</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control input-sm range" min="0" max="10" step="0.5"> -
+                  <input type="number" class="form-control input-sm range" min="0" max="10" step="0.5">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Bid By time of day</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Cost per Retweet</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Cost per Click</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 margin-top-10">
+      <div class="quality_check">
+        <div class="btn btn-sm btn-primary" ng-click="addqc('twitter')">QC Content</div>
+        <div class="qc" ng-repeat="qc in qcTwitter">
+          <div class="row">
+            <div class="col-sm-9">
+              <input type="text" 
+              ng-model="qc.doneBy" 
+              class="form-control input-sm" 
+              ng-disabled="qc.done">
+            </div>
+              <div class="right_btn" ng-click="qcDone($index,'twitter')"
+              ng-hide="qc.done">
+                <img src="./images/tick.png" />
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row custom-row">

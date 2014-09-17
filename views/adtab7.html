@@ -1,0 +1,110 @@
+<div class="row heading custom-row">
+    <h4>Cross Device</h4>
+  </div>
+  <div class="row custom-row">
+    <div class="col-sm-5 margin-top-10">
+      <div class="settings margin-top-10">
+        <div class="basic">
+          <span class="heading" id="crossD_basic_settings"><i class="fa fa-gear"></i> Basic Settings</span>
+          <div class="basic_setting_options" id="crossD_basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Enable</label>
+                <div class="col-sm-8">
+                  <div class="onoffswitch5">
+                      <input type="checkbox" ng-model="adContent.crossD.enable" name="onoffswitch5" class="onoffswitch-checkbox5" id="myonoffswitch5">
+                      <label class="onoffswitch-label5" for="myonoffswitch5">
+                          <span class="onoffswitch-inner5"></span>
+                          <span class="onoffswitch-switch5"></span>
+                      </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Publishers on Mobile</label>
+                <div class="col-sm-8">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Google
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Smaato 
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Budget</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Start Date</label>
+                <div class="col-sm-8">
+                  <input id="meeting" class="form-control input-sm" type="date" value="2014-09-16"/>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="advanced margin-top-10">
+          <span class="heading" id="crossD_advanced_settings"><i class="fa fa-gear"></i> Advanced Settings</span>
+          <div class="basic_setting_options" id="crossD_advanced">
+            <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                <label class="col-sm-4 control-label">Bid Range</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control input-sm range" min="0" max="10" step="0.5"> -
+                  <input type="number" class="form-control input-sm range" min="0" max="10" step="0.5">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Impresssion Cap</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Bid By Publisher</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-sm-4 control-label">Bid By Ad Size</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control input-sm" placeholder="">
+                </div>
+              </div>
+              
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5 margin-top-10">
+      <div class="quality_check">
+        <div class="btn btn-sm btn-primary" ng-click="addqc('crossd')">QC Content</div>
+        <div class="qc" ng-repeat="qc in qcCrossD">
+          <div class="row">
+            <div class="col-sm-9">
+              <input type="text" 
+              ng-model="qc.doneBy" 
+              class="form-control input-sm" 
+              ng-disabled="qc.done">
+            </div>
+              <div class="right_btn" ng-click="qcDone($index,'crossd')"
+              ng-hide="qc.done">
+                <img src="./images/tick.png" />
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row custom-row">
+    <div class="pull-right save_skip save_skip_crossD">
+      <div class="btn btn-sm btn-default" ng-click="skip('crossd',$index)">SKIP</div>
+      <div class="btn btn-sm btn-primary" ng-click="saved('crossD',$index)">SAVE &amp; CONTINUE</div>
+    </div>
+  </div>

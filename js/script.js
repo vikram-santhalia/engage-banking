@@ -334,6 +334,79 @@ $(document).on("click","#display_advanced_settings", function() {
   }
 });
 
+$(document).on("click","#facebook_basic_settings", function() {
+  if ( $( "#facebook_basic" ).is( ":hidden" ) ) {
+    $( "#facebook_basic" ).slideDown( "fast" );
+  } else {
+    $( "#facebook_basic" ).hide();
+  }
+});
+
+$(document).on("click","#facebook_advanced_settings", function() {
+  if ( $( "#facebook_advanced" ).is( ":hidden" ) ) {
+    $( "#facebook_advanced" ).slideDown( "fast" );
+  } else {
+    $( "#facebook_advanced" ).hide();
+  }
+});
+
+$(document).on("click","#twitter_basic_settings", function() {
+  if ( $( "#twitter_basic" ).is( ":hidden" ) ) {
+    $( "#twitter_basic" ).slideDown( "fast" );
+  } else {
+    $( "#twitter_basic" ).hide();
+  }
+});
+
+$(document).on("click","#twitter_advanced_settings", function() {
+  if ( $( "#twitter_advanced" ).is( ":hidden" ) ) {
+    $( "#twitter_advanced" ).slideDown( "fast" );
+  } else {
+    $( "#twitter_advanced" ).hide();
+  }
+});
+
+$(document).on("click","#email_basic_settings", function() {
+  if ( $( "#email_basic" ).is( ":hidden" ) ) {
+    $( "#email_basic" ).slideDown( "fast" );
+  } else {
+    $( "#email_basic" ).hide();
+  }
+});
+
+$(document).on("click","#email_advanced_settings", function() {
+  if ( $( "#email_advanced" ).is( ":hidden" ) ) {
+    $( "#email_advanced" ).slideDown( "fast" );
+  } else {
+    $( "#email_advanced" ).hide();
+  }
+});
+
+$(document).on("click","#sms_basic_settings", function() {
+  if ( $( "#sms_basic" ).is( ":hidden" ) ) {
+    $( "#sms_basic" ).slideDown( "fast" );
+  } else {
+    $( "#sms_basic" ).hide();
+  }
+});
+
+
+$(document).on("click","#crossD_basic_settings", function() {
+  if ( $( "#crossD_basic" ).is( ":hidden" ) ) {
+    $( "#crossD_basic" ).slideDown( "fast" );
+  } else {
+    $( "#crossD_basic" ).hide();
+  }
+});
+
+$(document).on("click","#crossD_advanced_settings", function() {
+  if ( $( "#crossD_advanced" ).is( ":hidden" ) ) {
+    $( "#crossD_advanced" ).slideDown( "fast" );
+  } else {
+    $( "#crossD_advanced" ).hide();
+  }
+});
+
 
 
   setTimeout( function(){
@@ -347,7 +420,6 @@ $(document).on("click","#display_advanced_settings", function() {
       drawDonutChart()
       drawAreaChart();
       drawMultiLineChart();
-
   }, 500 );
 
 

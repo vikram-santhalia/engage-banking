@@ -17,6 +17,7 @@
                   </div>
                 </div>
               </div>
+              <div class="qc_names">QC done by <b>{{adContent.display.qcd}}</b></div>
           </div>
       </div>
 
@@ -52,6 +53,7 @@
               </div>
             </div>
           </div>
+          <div class="qc_names">QC done by <b>{{adContent.facebook.qcd}}</b></div>
         </div>
       </div>
 
@@ -64,6 +66,7 @@
         </div>
         <div class="col-sm-8">
           <textarea class="form-control" disabled ng-model="adContent.twitter.description" rows="6" cols="30" placeholder="Enter 140 characters"></textarea>
+          <div class="qc_names">QC done by <b>{{adContent.twitter.qcd}}</b></div>
         </div>
       </div>
 
@@ -95,6 +98,7 @@
               </div>
             </div>
           </div>
+          <div class="qc_names">QC done by <b>{{adContent.email.qcd}}</b></div>
         </div>
       </div>
 
@@ -106,6 +110,19 @@
         </div>
         <div class="col-sm-8">
            <textarea disabled class="form-control" ng-model="adContent.sms.description" rows="6" cols="30" placeholder="Enter 250 characters"></textarea>
+           <div class="qc_names">QC done by <b>{{adContent.sms.qcd}}</b></div>
+        </div>
+      </div>
+
+      <div class="row margin-top-20" ng-if="adContent.crossD.saved === 'Yes'">
+        <div class="col-sm-4">
+          <div class="summaryTitle">
+            <span>Cross Device:</span>
+          </div>
+        </div>
+        <div class="col-sm-8">
+           <span class="config" >Cross Device Configration {{adContent.crossD.enabled}}</span>
+           <div class="qc_names">QC done by <b>{{adContent.crossD.qcd}}</b></div>
         </div>
       </div>
 
