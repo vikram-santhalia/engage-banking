@@ -14,13 +14,13 @@
             <div class="basic_setting_options" id="email_basic">
               <form class="form-horizontal" role="form">
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Sent Date</label>
+                  <label class="col-sm-4 control-label">Send Date</label>
                   <div class="col-sm-8">
                     <input id="meeting" class="form-control input-sm" type="date" value="2014-09-16"/>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword" class="col-sm-4 control-label">Sent Time</label>
+                  <label for="inputPassword" class="col-sm-4 control-label">Send Time</label>
                   <div class="col-sm-8">
                     <input type="time" name="usr_time" class="form-control input-sm" value="00:00:00" />
                   </div>
@@ -99,7 +99,7 @@
       </div>
       <div class="col-sm-1 margin-top-10">
         <div class="quality_check">
-          <div class="btn btn-sm btn-primary" ng-click="addqc()">QC Content</div>
+          <div class="btn btn-sm btn-danger qc_btn" ng-click="addqc()">QC Content</div>
           <div class="qc" ng-repeat="qc in qcEmail">
             <div class="row">
               <div class="col-sm-9">

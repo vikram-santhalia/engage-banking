@@ -525,6 +525,18 @@ angular.module( 'engageApp', [
         disabled: false
       },
       {
+        'name': "ATM",
+        route: "./views/adtab8.html",
+        active: false,
+        disabled: false
+      },
+      {
+        'name': "Ad-Prospect",
+        route: "./views/adtab9.html",
+        active: false,
+        disabled: false
+      },
+      {
         'name': "Cross-Device",
         route: "./views/adtab7.html",
         active: false,
@@ -1082,7 +1094,7 @@ angular.module( 'engageApp', [
       $rootScope.adContent[whom]['saved'] = 'Yes';
       $rootScope.adContent[whom]['banner'] = $scope.email.uploader.queue;
       $rootScope.adContent[whom]['subject'] = $scope.emailSubject;
-      $rootScope.adContent[whom]['qcd'] = getApprovalNames($scope.qcDisplay);
+      $rootScope.adContent[whom]['qcd'] = getApprovalNames($scope.qcEmail);
 
       $rootScope.otherData['emailSubject'] = $scope.emailSubject;
     }
