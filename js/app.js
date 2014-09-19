@@ -182,6 +182,85 @@ angular.module( 'engageApp', [
       }
     ];
 
+    $scope.graphs = [
+      {
+        graphCId: "my-email-graph",
+        icon: "fa-envelope",
+        iconChange: "fa-caret-up",
+        change: "11.9% ",
+        val: "2.1K",
+        graphId: "email_graph",
+        bottomText: "Email",
+        bottomClass: "graph_mail",
+        active: true,
+        arrowClass: "arrowMail"
+      },
+      {
+        graphCId: "my-click-graph",
+        icon: "fa-hand-o-up",
+        iconChange: "fa-caret-up",
+        change: "13.2% ",
+        val: "6.9K",
+        graphId: "click_graph",
+        bottomText: "Click Stream",
+        bottomClass: "graph_click",
+        active: false,
+        arrowClass: "arrowClick"
+      },
+      {
+        graphCId: "my-call-graph",
+        icon: "fa-phone",
+        iconChange: "fa-caret-down",
+        change: "0.8% ",
+        val: "9.3K",
+        graphId: "call_graph",
+        bottomText: "Call Center",
+        bottomClass: "graph_call",
+        active: false,
+        arrowClass: "arrowCall"
+      },
+      {
+        graphCId: "my-data-graph",
+        icon: "fa-database",
+        iconChange: "fa-caret-up",
+        change: "8.7% ",
+        val: "13.2K",
+        graphId: "data_graph",
+        bottomText: "CRM",
+        bottomClass: "graph_data",
+        active: false,
+        arrowClass: "arrowData"
+      }
+    ];
+
+    $scope.activateGraph = function(index){
+      if(index === 0){
+        $scope.graphs[0].active = true;
+        $scope.graphs[1].active = false;
+        $scope.graphs[2].active = false;
+        $scope.graphs[3].active = false;
+      }
+      else if(index === 1){
+        $scope.graphs[0].active = false;
+        $scope.graphs[1].active = true;
+        $scope.graphs[2].active = false;
+        $scope.graphs[3].active = false;
+      }
+      else if(index === 2){
+        $scope.graphs[0].active = false;
+        $scope.graphs[1].active = false;
+        $scope.graphs[2].active = true;
+        $scope.graphs[3].active = false;
+      }
+      else if(index === 3){
+        $scope.graphs[0].active = false;
+        $scope.graphs[1].active = false;
+        $scope.graphs[2].active = false;
+        $scope.graphs[3].active = true;
+      }
+      
+    };
+
     $scope.datedActivities = [
       {
         date: "Today",

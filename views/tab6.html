@@ -9,9 +9,15 @@
         <div class="col-sm-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">Data Available</h3>
             </div>
             <div class="panel-body concentric">
+              <div class="concLegends">
+                <div class="concLegend conc_fb">Facebook Cookie</div>
+                <div class="concLegend conc_em">Email</div>
+                <div class="concLegend conc_pn">Phone No</div>
+                <div class="concLegend conc_vc">Vizury Cookie</div>
+              </div>
               <img src="images/concentric.png" />
             </div>
           </div>
@@ -54,54 +60,33 @@
         <div class="col-sm-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Day-Wise Data</h3>
+              <h3 class="panel-title">Source-Wise Data</h3>
             </div>
             <div class="panel-body on-board-panel">
                <div class="graphs">
-                <div class="graph">
+
+
+                <div class="graph" 
+                  id="{{graph.graphCId}}"
+                  ng-class="{active:graph.active}"
+                  ng-click="activateGraph($index)"
+                  ng-repeat="graph in graphs">
                   <div class="graph_icon">
-                    <i class="fa fa-envelope fa-2x"></i>
+                    <i class="fa {{graph.icon}} fa-2x"></i>
                   </div>
                   <div class="graph_up">
-                    <div>11.9% <i class="fa fa-caret-up"></i></div>
+                    <div>{{graph.change}}<i class="fa {{graph.iconChange}}"></i></div>
                   </div>
-                  <div class="graph_val"><span>2.1K</span></div>
-                  <div class="flotgraph" id="email_graph"></div>
-                  <div class="bottom_heading graph_mail">Email</div>
+                  <div class="graph_val"><span>{{graph.val}}</span></div>
+                  <div class="flotgraph" id="{{graph.graphId}}"></div>
+                  <div class="bottom_heading {{graph.bottomClass}}">{{graph.bottomText}}</div>
+                  <div class="arrow-down {{graph.arrowClass}}" 
+                    ng-class="{graphActive:graph.active}">
+                  </div>
                 </div>
-                <div class="graph">
-                  <div class="graph_icon">
-                    <i class="fa fa-hand-o-up fa-2x"></i>
-                  </div>
-                  <div class="graph_up">
-                    <div>13.2% <i class="fa fa-caret-up"></i></div>
-                  </div>
-                  <div class="graph_val"><span>6.9K</span></div>
-                  <div class="flotgraph" id="click_graph"></div>
-                  <div class="bottom_heading graph_click">Click Stream</div>
-                </div>
-                <div class="graph">
-                  <div class="graph_icon">
-                    <i class="fa fa-phone fa-2x"></i>
-                  </div>
-                  <div class="graph_up">
-                    <div>0.8% <i class="fa fa-caret-down"></i></div>
-                  </div>
-                  <div class="graph_val"><span>9.3K</span></div>
-                  <div class="flotgraph" id="call_graph"></div>
-                  <div class="bottom_heading graph_call">Call Center</div>
-                </div>
-                <div class="graph">
-                  <div class="graph_icon">
-                    <i class="fa fa-database fa-2x"></i>
-                  </div>
-                  <div class="graph_up">
-                    <div>8.7% <i class="fa fa-caret-up"></i></div>
-                  </div>
-                  <div class="graph_val"><span>13.2K</span></div>
-                  <div class="flotgraph" id="data_graph"></div>
-                  <div class="bottom_heading graph_data">CRM</div>
-                </div>
+                
+                
+                
                </div>
                <div class="m-chart">
                 <div id="multiLineChart"></div>

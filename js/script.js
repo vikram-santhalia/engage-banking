@@ -285,6 +285,23 @@ $(document).on("click","#areachart", function() {
   drawAreaChart("display");
 });*/
 
+$(document).on("click","#my-email-graph", function() {
+  animationClick("#multiLineChart", "animated fadeIn");
+  drawMultiLineChart(dataM[0]);
+});
+$(document).on("click","#my-click-graph", function() {
+  animationClick("#multiLineChart", "animated fadeIn");
+  drawMultiLineChart(dataM[3]);
+});
+$(document).on("click","#my-call-graph", function() {
+  animationClick("#multiLineChart", "animated fadeIn");
+  drawMultiLineChart(dataM[1]);
+});
+$(document).on("click","#my-data-graph", function() {
+  animationClick("#multiLineChart", "animated fadeIn");
+  drawMultiLineChart(dataM[2]);
+});
+
 $(document).on("click","#areachartFb", function() {
   animationClick("#flotcontainer", "animated fadeIn");
   $("#chartLegend").css( { display: 'none' });
@@ -430,7 +447,7 @@ $(document).on("click","#crossD_advanced_settings", function() {
       $("#padWidthStack").css( { display: 'none' });
       /*drawDonutChart()*/
       drawAreaChart();
-      drawMultiLineChart();
+      drawMultiLineChart(dataM[0]);
       drawBarChart("#email_graph",data_email, '#2ed069');
       drawBarChart("#call_graph",data_call, '#c94c4c');
       drawBarChart("#click_graph",data_click, '#2ed069');
@@ -463,60 +480,58 @@ function animationClick(element, animation){
       }, 2000);
 };
 
-
-function drawMultiLineChart() { 
-
-  var dataM = [
-    {
-      data: dataM1,
-      lines: {                         
-          fill: false, show:true
-      },
-      clickable: true,
-      hoverable: true,
-      shadowSize: 4,
-      highlightColor: "#2574a9",
-      color: '#2574a9',
-      points: { show: true, fill: true, fillColor: '#669EC3'}
+var dataM = [
+  {
+    data: dataM1,
+    lines: {                         
+        fill: false, show:true
     },
-    {
-      data: dataM2,
-      lines: {                         
-          fill: false, show:true
-      },
-      clickable: true,
-      hoverable: true,
-      shadowSize: 4,
-      highlightColor: "#239d58",
-      color: '#239d58',
-      points: { show: true, fill: true, fillColor: '#65BA8A'}
+    clickable: true,
+    hoverable: true,
+    shadowSize: 4,
+    highlightColor: "#2574a9",
+    color: '#2574a9',
+    points: { show: true, fill: true, fillColor: '#669EC3'}
+  },
+  {
+    data: dataM2,
+    lines: {                         
+        fill: false, show:true
     },
-    {
-      data: dataM3,
-      lines: {                         
-          fill: false, show:true
-      },
-      clickable: true,
-      hoverable: true,
-      shadowSize: 4,
-      highlightColor: "#70757b",
-      color: '#70757b',
-      points: { show: true, fill: true, fillColor: '#9B9EA3'}
+    clickable: true,
+    hoverable: true,
+    shadowSize: 4,
+    highlightColor: "#239d58",
+    color: '#239d58',
+    points: { show: true, fill: true, fillColor: '#65BA8A'}
+  },
+  {
+    data: dataM3,
+    lines: {                         
+        fill: false, show:true
     },
-    {
-      data: dataM4,
-      lines: {                         
-          fill: false, show:true
-      },
-      clickable: true,
-      hoverable: true,
-      shadowSize: 4,
-      highlightColor: "#b9493e",
-      color: '#b9493e',
-      points: { show: true, fill: true, fillColor: '#CE8078'}
-    }
-  ];
+    clickable: true,
+    hoverable: true,
+    shadowSize: 4,
+    highlightColor: "#70757b",
+    color: '#70757b',
+    points: { show: true, fill: true, fillColor: '#9B9EA3'}
+  },
+  {
+    data: dataM4,
+    lines: {                         
+        fill: false, show:true
+    },
+    clickable: true,
+    hoverable: true,
+    shadowSize: 4,
+    highlightColor: "#b9493e",
+    color: '#b9493e',
+    points: { show: true, fill: true, fillColor: '#CE8078'}
+  }
+];
 
+function drawMultiLineChart(data) { 
   var options = {
     xaxis: {
       mode: "time",
@@ -546,9 +561,7 @@ function drawMultiLineChart() {
     }
 
   };
-
-
-  var plot = $.plot($("#multiLineChart"), dataM, options);  
+  var plot = $.plot($("#multiLineChart"), [data], options);  
 }
 
 
