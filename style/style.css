@@ -1317,7 +1317,7 @@
 }
 
 .activity-panel{
-  height:420px;
+  height:228px;
   overflow-x:hidden;
   overflow-y:scroll;
   padding-bottom: 0;
@@ -1353,8 +1353,13 @@
 }
 
 #multiLineChart{
-  width: 870px;
-  height:169px;
+  margin-top:10px;
+  width: 860px;
+  height:192px;
+}
+
+.m-chart{
+  padding:15px;
 }
 
 .times{
@@ -1858,4 +1863,101 @@
 
 .qc_btn{
   width:124px;
+}
+
+.concentric{
+  text-align: center;
+}
+
+.concentric img{
+  height: 120px;
+  width: 120px;
+}
+
+.on-board-panel{
+  padding:0px;
+}
+
+.graphs{
+  width:100%;
+  height:200px;
+  border-bottom: 1px solid #ddd;
+}
+
+.graph{
+  position: relative;
+  width:25%;
+  float: left;
+  height:200px;
+}
+
+.graph:not(:last-child){
+  border-right: 1px solid #ddd;
+}
+
+.bottom_heading{
+  position: absolute;
+  bottom:0px;
+  width:100%;
+  height:35px;
+  border-top: 1px solid #ddd;
+  padding:8px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.graph_mail{
+  background-color: #2574a9;
+}
+
+.graph_click{
+  background-color: #b9493e;
+}
+
+.graph_call{
+  background-color: #239d58;
+}
+
+.graph_data{
+  background-color: #70757b;
+}
+
+.flotgraph{
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  bottom: 44px;
+  left: 10px;
+}
+
+.graph_icon{
+  position: relative;
+  top:10px;
+  text-align: center;
+}
+
+.graph_up{
+  position: absolute;
+  left: 170px;
+  top: 5px;
+}
+
+.graph_up i.fa-caret-up{
+  color: #2ed069;
+}
+
+.graph_up i.fa-caret-down{
+  color: #c94c4c;
+}
+
+.graph_val{
+  width: 100%;
+  color: #2b3d4e;
+  text-align: center;
+  top: 48px;
+  position: absolute;
+  font-size: 32px;
+  font-weight: bolder;
+  font-family: 'proxima_nova_rgbold';
 }

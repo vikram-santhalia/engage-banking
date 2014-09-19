@@ -274,6 +274,17 @@ $(document).on("click","#areachart", function() {
   drawAreaChart("display");
 });
 
+/*$(document).on("click","#areachart", function() {
+  animationClick("#flot_", "animated fadeIn");
+  $("#chartLegend").css( { display: 'none' });
+  $("#chartLegendPie").css( { display: 'none' });
+  $("#padHeightArea").css( { display: 'block' });
+  $("#padWidthArea").css( { display: 'block' });
+  $("#padHeightStack").css( { display: 'none' });
+  $("#padWidthStack").css( { display: 'none' });
+  drawAreaChart("display");
+});*/
+
 $(document).on("click","#areachartFb", function() {
   animationClick("#flotcontainer", "animated fadeIn");
   $("#chartLegend").css( { display: 'none' });
@@ -417,9 +428,13 @@ $(document).on("click","#crossD_advanced_settings", function() {
       $("#padWidthArea").css( { display: 'block' });
       $("#padHeightStack").css( { display: 'none' });
       $("#padWidthStack").css( { display: 'none' });
-      drawDonutChart()
+      /*drawDonutChart()*/
       drawAreaChart();
       drawMultiLineChart();
+      drawBarChart("#email_graph",data_email, '#2ed069');
+      drawBarChart("#call_graph",data_call, '#c94c4c');
+      drawBarChart("#click_graph",data_click, '#2ed069');
+      drawBarChart("#data_graph",data_data, '#2ed069');
   }, 500 );
 
 
@@ -558,4 +573,48 @@ function drawDonutChart() {
 
     $.plot($("#donut"), dataDN, options);
     /*$("#donutData").text(Math.round(dataDN[0].data/dataDN[1].data*100)+"%");*/
+}
+
+
+
+ var data_email = [[0, 11],[1, 15],[2, 25],[3, 24],[4, 13],[5, 18],[6,27]];
+ var data_call = [[0, 5],[1, 8],[2, 3],[3, 21],[4, 11],[5, 16],[6,9]];
+ var data_click = [[0, 13],[1, 15],[2, 10],[3, 21],[4, 17],[5, 7],[6,20]];
+ var data_data = [[0, 8],[1, 14],[2, 4],[3, 26],[4, 15],[5, 9],[6,16]];
+
+ function drawBarChart(holder,data,color) {  
+    var options = {
+            series: {
+                bars: {
+                    show: true
+                }
+
+            },
+            bars: {
+                align: "center",
+                fill:1,
+                show: true,
+                barWidth: 0.7,
+                lineWidth: 0,
+                order: 2,
+                fillColor:  color
+            },
+            xaxis: {
+              tickLength: 0,
+              ticks: 0
+            },
+            yaxis: {
+              tickLength: 0,
+              ticks: 0
+            },
+            grid: {
+                hoverable: false,
+                borderWidth: 0,
+                backgroundColor: { colors: ["#ffffff", "#ffffff"] },
+                aboveData: true,
+                markings: [ { xaxis: { from: -1, to: 7 }, yaxis: { from: 0, to: 0 }, color: color },
+                             { xaxis: { from: 0, to: 0 }, yaxis: { from: 0, to: 0 }, color: "#000" }]
+            }
+        };
+    $.plot($(holder), [data], options);
 }

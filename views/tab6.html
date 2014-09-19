@@ -5,7 +5,21 @@
 
   <div class="row">
     <div class="col-sm-3 activity_feed">
-      <div class="panel panel-default">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body concentric">
+              <img src="images/concentric.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Activity Feed</h3>
         </div>
@@ -32,73 +46,66 @@
 
         </div>
       </div>
+        </div>
+      </div>
     </div>
     <div class="col-sm-9 custom-onboard-col">
-      <div class="row active_legends">
-        <div class="col-sm-3">
-          <span class="legend_block bg_email"></span> 
-          <span class="legend_text">EMAIL</span> 
-        </div>
-        <div class="col-sm-3">
-          <span class="legend_block bg_crm"></span> 
-          <span class="legend_text">CRM</span> 
-        </div>
-        <div class="col-sm-3">
-          <span class="legend_block bg_click"></span> 
-          <span class="legend_text">CLICKSTREAM</span> 
-        </div>
-        <div class="col-sm-3">
-          <span class="legend_block bg_call"></span> 
-          <span class="legend_text">CALLCENTER</span> 
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Average Download Time</h3>
-            </div>
-            <div class="panel-body times">
-              <div class="" ng-repeat="avgTime in avgTimes">
-                <!-- <span class="count_text">{{metric.name}}&nbsp;({{metric.formattedValue}})</span> -->
-                <progressbar class="progress-bar-striped active {{avgTime.className}}" value="avgTime.value" max="10">
-                </progressbar>
-              <!-- <span class="avgTimeText label label-primary {{avgTime.className}}">{{avgTime.value + 's'}}</span> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">New Data Added</h3>
-            </div>
-            <div class="panel-body">
-              <div class="info-active">
-                <div class="infoDiv">
-                  <span class="infoValue">1,230,702</span>
-                  <div id="donutHolder">
-                    <div id="donut"></div>
-                    <span id="donutData"></span>   
-                  </div>
-                </div>
-                <div class="perValue">
-                  <span ><i class="fa fa-caret-up"></i>10.34%</span>
-                </div>
-                <span class="previousValue">Previous: 1,103,446</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Day-Wise Data</h3>
             </div>
-            <div class="panel-body">
-               <div id="multiLineChart"></div>
+            <div class="panel-body on-board-panel">
+               <div class="graphs">
+                <div class="graph">
+                  <div class="graph_icon">
+                    <i class="fa fa-envelope fa-2x"></i>
+                  </div>
+                  <div class="graph_up">
+                    <div>11.9% <i class="fa fa-caret-up"></i></div>
+                  </div>
+                  <div class="graph_val"><span>2.1K</span></div>
+                  <div class="flotgraph" id="email_graph"></div>
+                  <div class="bottom_heading graph_mail">Email</div>
+                </div>
+                <div class="graph">
+                  <div class="graph_icon">
+                    <i class="fa fa-hand-o-up fa-2x"></i>
+                  </div>
+                  <div class="graph_up">
+                    <div>13.2% <i class="fa fa-caret-up"></i></div>
+                  </div>
+                  <div class="graph_val"><span>6.9K</span></div>
+                  <div class="flotgraph" id="click_graph"></div>
+                  <div class="bottom_heading graph_click">Click Stream</div>
+                </div>
+                <div class="graph">
+                  <div class="graph_icon">
+                    <i class="fa fa-phone fa-2x"></i>
+                  </div>
+                  <div class="graph_up">
+                    <div>0.8% <i class="fa fa-caret-down"></i></div>
+                  </div>
+                  <div class="graph_val"><span>9.3K</span></div>
+                  <div class="flotgraph" id="call_graph"></div>
+                  <div class="bottom_heading graph_call">Call Center</div>
+                </div>
+                <div class="graph">
+                  <div class="graph_icon">
+                    <i class="fa fa-database fa-2x"></i>
+                  </div>
+                  <div class="graph_up">
+                    <div>8.7% <i class="fa fa-caret-up"></i></div>
+                  </div>
+                  <div class="graph_val"><span>13.2K</span></div>
+                  <div class="flotgraph" id="data_graph"></div>
+                  <div class="bottom_heading graph_data">CRM</div>
+                </div>
+               </div>
+               <div class="m-chart">
+                <div id="multiLineChart"></div>
+              </div>
             </div>
           </div>
         </div>
