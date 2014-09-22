@@ -15,6 +15,7 @@ angular.module( 'engageApp', [
     };
     $rootScope.otherData = {
       'twitterDesc':"",
+      'atmDesc':"",
       'emailSubject':"",
       'smsDesc':""
     };
@@ -24,7 +25,8 @@ angular.module( 'engageApp', [
       'twitter' :  {'saved':'No','description':'','qcd':''},
       'email' :    {'saved':'No','subject':'','banner':'','qcd':''},
       'sms' :      {'saved':'No','description':'','qcd':''},
-      'crossD': {'saved':'No','qcd':'','enable':false, 'enabled':'is not enabled'}
+      'atm' :      {'saved':'No','description':'','qcd':''},
+      'crossD':    {'saved':'No','qcd':'','enable':false, 'enabled':'is not enabled'}
     };
 })
 
@@ -100,6 +102,14 @@ angular.module( 'engageApp', [
         $rootScope.adContent[whom]['qcd'] = getApprovalNames($scope.qcTwitter);
 
         $rootScope.otherData['twitterDesc'] = this.twitterDesc;
+      }
+      else if(whom === 'atm'){
+        this.atmDesc;
+        $rootScope.adContent[whom]['saved'] = 'Yes';
+        $rootScope.adContent[whom]['description'] = this.atmDesc;
+        $rootScope.adContent[whom]['qcd'] = getApprovalNames($scope.qcAtm);
+
+        $rootScope.otherData['atmDesc'] = this.atmDesc;
       }
       else if(whom === 'sms'){
         $rootScope.adContent[whom]['saved'] = 'Yes';
@@ -574,7 +584,7 @@ angular.module( 'engageApp', [
 
     $scope.adTabs = [
       {
-        'name': "Display",
+        'name': "RTB Exchange",
         route: "./views/adtab1.html",
         active: true,
         disabled: false
@@ -610,7 +620,7 @@ angular.module( 'engageApp', [
         disabled: false
       },
       {
-        'name': "Ad-Prospect",
+        'name': "Display By",
         route: "./views/adtab9.html",
         active: false,
         disabled: false
@@ -881,6 +891,7 @@ angular.module( 'engageApp', [
       };
       $rootScope.otherData = {
         'twitterDesc':"",
+        'atmDesc':"",
         'emailSubject':"",
         'smsDesc':""
       };
@@ -890,7 +901,8 @@ angular.module( 'engageApp', [
         'twitter' :  {'saved':'No','description':'','qcd':''},
         'email' :    {'saved':'No','subject':'','banner':'','qcd':''},
         'sms' :      {'saved':'No','description':'','qcd':''},
-        'crossD': {'saved':'No','qcd':'','enable':false, 'enabled':'is not enabled'}
+        'atm' :      {'saved':'No','description':'','qcd':''},
+        'crossD':    {'saved':'No','qcd':'','enable':false, 'enabled':'is not enabled'}
       };
     }
 
@@ -898,6 +910,8 @@ angular.module( 'engageApp', [
     $scope.qcDisplay = [
     ];
     $scope.qcTwitter = [
+    ];
+    $scope.qcAtm = [
     ];
     $scope.qcSms = [
     ];
@@ -911,6 +925,9 @@ angular.module( 'engageApp', [
       }
       else if(addto === "twitter"){
         $scope.qcTwitter.push(qc);
+      }
+      else if(addto === "atm"){
+        $scope.qcAtm.push(qc);
       }
       else if(addto === "sms"){
         $scope.qcSms.push(qc);
@@ -931,6 +948,14 @@ angular.module( 'engageApp', [
       }
       else if(addto === "twitter"){
         if($scope.qcTwitter[index].doneBy.length < 1){
+          growl.addErrorMessage("Please add your name to complete QC.");
+        }
+        else{
+          $scope.qcTwitter[index].done = true ;
+        }
+      }
+      else if(addto === "atm"){
+        if($scope.qcAtm[index].doneBy.length < 1){
           growl.addErrorMessage("Please add your name to complete QC.");
         }
         else{

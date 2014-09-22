@@ -5,7 +5,7 @@
       <div class="row margin-top-20" ng-if="adContent.display.saved === 'Yes'">
         <div class="col-sm-4">
           <div class="summaryTitle">
-            <span>Display:</span>
+            <span>RTB Exchange:</span>
           </div>
         </div>
         <div class="col-sm-8">
@@ -111,6 +111,18 @@
         <div class="col-sm-8">
            <textarea disabled class="form-control" ng-model="adContent.sms.description" rows="6" cols="30" placeholder="Enter 250 characters"></textarea>
            <div class="qc_names">Approved by <b>{{adContent.sms.qcd}}</b></div>
+        </div>
+      </div>
+
+      <div class="row margin-top-20" ng-if="adContent.atm.saved === 'Yes'">
+        <div class="col-sm-4">
+          <div class="summaryTitle">
+            <span>ATM:</span>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <textarea class="form-control" disabled ng-model="adContent.atm.description" rows="6" cols="30" placeholder="Enter 200 characters"></textarea>
+          <div class="qc_names">Approved by <b>{{adContent.atm.qcd}}</b></div>
         </div>
       </div>
 

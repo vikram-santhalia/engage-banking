@@ -1,0 +1,35 @@
+ <div class="row heading custom-row">
+    <h4>ATM</h4>
+  </div>
+  <div class="row custom-row">
+    <div class="col-sm-5 margin-top-10 input_row ">
+      <textarea class="form-control margin-top-10" ng-model="atmDesc" rows="6" cols="30" placeholder="Enter 200 characters"></textarea>
+    </div>
+    <div class="col-sm-5 margin-top-10">
+    </div>
+    <div class="col-sm-1 margin-top-10">
+      <div class="quality_check">
+        <div class="btn btn-sm btn-danger qc_btn" ng-click="addqc('atm')">Approve Content</div>
+        <div class="qc" ng-repeat="qc in qcAtm">
+          <div class="row">
+            <div class="col-sm-9">
+              <input type="text" 
+              ng-model="qc.doneBy" 
+              class="form-control input-sm" 
+              ng-disabled="qc.done">
+            </div>
+              <div class="right_btn" ng-click="qcDone($index,'atm')"
+              ng-hide="qc.done">
+                <img src="./images/tick.png" />
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row custom-row">
+    <div class="pull-right save_skip save_skip_atm">
+      <div class="btn btn-sm btn-default" ng-click="skip('atm',$index)">SKIP</div>
+      <div class="btn btn-sm btn-primary" ng-click="saved('atm',$index)">SAVE &amp; CONTINUE</div>
+    </div>
+  </div>
