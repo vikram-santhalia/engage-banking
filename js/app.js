@@ -620,7 +620,7 @@ angular.module( 'engageApp', [
         disabled: false
       },
       {
-        'name': "Display By",
+        'name': "Display Buy",
         route: "./views/adtab9.html",
         active: false,
         disabled: false
